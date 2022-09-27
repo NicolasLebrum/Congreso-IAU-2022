@@ -1,1 +1,2 @@
-# Congreso-IAU-2022
+# Optimization of Gauss Method to describe with most accuracy the orbits
+of Near Earth Asteroids - NEAs
