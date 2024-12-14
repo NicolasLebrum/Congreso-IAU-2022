@@ -3,9 +3,9 @@ from method import *
 
 
 # Create directories for saving plots
-#asteroid_name = cuerpo  # Replace with actual asteroid name
-#base_dir = "RESULTS"  #base directory
-#asteroid_dir = os.path.join(base_dir, asteroid_name)
+asteroid_name = cuerpo  # Replace with actual asteroid name
+base_dir = "RESULTS"  #base directory
+asteroid_dir = os.path.join(base_dir, asteroid_name)
 
 # Create directory if it doesn't exist
 # os.makedirs(asteroid_dir, exist_ok=True)
@@ -273,8 +273,16 @@ results = sm.OLS(y, x).fit()
 results_table = results.summary()
 #(print(results_table))
 
-np.savetxt('arr_sort_a', arr_sort_a, delimiter=',', comments='')
-np.savetxt('arr_sort_e', arr_sort_e, delimiter=',', comments='')
-np.savetxt('arr_sort_i', arr_sort_i, delimiter=',', comments='')
-np.savetxt('arr_sort_long_node', arr_sort_long_node, delimiter=',', comments='')
-np.savetxt('arr_sort_arg_perh', arr_sort_arg_perh, delimiter=',', comments='')
+filepath1 = os.path.join(asteroid_dir, 'arr_sort_a.txt')
+np.savetxt('filepath1', arr_sort_a, delimiter=';', comments='')
+filepath2 = os.path.join(asteroid_dir, 'arr_sort_e.txt')
+np.savetxt('filepath2', arr_sort_e, delimiter=';', comments='')
+filepath3 = os.path.join(asteroid_dir, 'arr_sort_i.txt')
+np.savetxt('filepath3', arr_sort_i, delimiter=';', comments='')
+filepath4 = os.path.join(asteroid_dir, 'arr_sort_long_node.txt')
+np.savetxt('filepath4', arr_sort_long_node, delimiter=';', comments='')
+filepath5 = os.path.join(asteroid_dir, 'arr_sort_arg_perh.txt')
+np.savetxt('filepath5', arr_sort_arg_perh, delimiter=';', comments='')
+
+
+
