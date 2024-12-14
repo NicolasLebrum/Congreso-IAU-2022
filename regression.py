@@ -273,10 +273,10 @@ results = sm.OLS(y, x).fit()
 results_table = results.summary()
 #(print(results_table))
 
-df_sorted.to_csv('arr_sort_a', index=False)
-df_sorted.to_csv('arr_sort_e', index=False)
-df_sorted.to_csv('arr_sort_i', index=False)
-df_sorted.to_csv('arr_sort_long_node', index=False)
-df_sorted.to_csv('arr_sort_arg_perh', index=False)
+arr_sort_a.to_csv('arr_sort_a', index=False)
+arr_sort_e.to_csv('arr_sort_e', index=False)
+arr_sort_i.to_csv('arr_sort_i', index=False)
+arr_sort_long_node.to_csv('arr_sort_long_node', index=False)
+arr_sort_arg_perh.to_csv('arr_sort_arg_perh', index=False)
 
 
