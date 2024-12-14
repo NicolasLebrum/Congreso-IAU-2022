@@ -273,10 +273,8 @@ results = sm.OLS(y, x).fit()
 results_table = results.summary()
 #(print(results_table))
 
-arr_sort_a.to_csv('arr_sort_a', index=False)
-arr_sort_e.to_csv('arr_sort_e', index=False)
-arr_sort_i.to_csv('arr_sort_i', index=False)
-arr_sort_long_node.to_csv('arr_sort_long_node', index=False)
-arr_sort_arg_perh.to_csv('arr_sort_arg_perh', index=False)
-
-
+np.savetxt('arr_sort_a', matrix, delimiter=',', comments='')
+np.savetxt('arr_sort_e', matrix, delimiter=',', comments='')
+np.savetxt('arr_sort_i', matrix, delimiter=',', comments='')
+np.savetxt('arr_sort_long_node', matrix, delimiter=',', comments='')
+np.savetxt('arr_sort_arg_perh', matrix, delimiter=',', comments='')
