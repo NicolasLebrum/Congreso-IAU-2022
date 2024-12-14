@@ -3,12 +3,12 @@ from method import *
 
 
 # Create directories for saving plots
-asteroid_name = cuerpo  # Replace with actual asteroid name
-base_dir = "RESULTS"  #base directory
-asteroid_dir = os.path.join(base_dir, asteroid_name)
+#asteroid_name = cuerpo  # Replace with actual asteroid name
+#base_dir = "RESULTS"  #base directory
+#asteroid_dir = os.path.join(base_dir, asteroid_name)
 
 # Create directory if it doesn't exist
-os.makedirs(asteroid_dir, exist_ok=True)
+# os.makedirs(asteroid_dir, exist_ok=True)
 
 
 # Theorical elements
@@ -29,11 +29,12 @@ arg_perh_asteroid = np.mean(Asteroide['w']) #Theoretical perihelion argument
 anom_true_asteroid = np.mean(Asteroide['ma']) #Theoretical true anomaly
 
 # Grap orbital elements
+'''
 fag,ax = plt.subplots(5,1, figsize=(6,36)) 
 
 ax[0].hist(a,bins='auto',color="skyblue");
 ax[0].set_xlim(a_asteroid-1, a_asteroid+1)
-#ax[0].set_xlim(1, 3)
+ax[0].set_xlim(1, 3)
 ax[0].axvline(a_asteroid, color='red',markersize=50)
 ax[0].set_xlabel('a [AU]', size=20)
 ax[0].set_ylabel('Number bodies', size=20)
@@ -86,8 +87,7 @@ ax[4].minorticks_on()
 
 plot_path = os.path.join(asteroid_dir, 'orbital_elements_distribution.png')
 plt.savefig(plot_path, bbox_inches='tight')
-
-
+'''
 #Delta of theoretical value and value obtained for each orbital element
 Data_orbital_element['delta_a'] = np.abs(Data_orbital_element['a'] - a_asteroid) #semi-major axis
 Data_orbital_element['delta_e'] = np.abs(Data_orbital_element['e'] - e_asteroid) #eccentricity
@@ -191,6 +191,7 @@ def lineal_function(x):
 Y = lineal_function(x)
 
 #linear least squares regression plot
+'''
 fig = plt.figure(figsize=(7,5))
 ejes = fig.add_axes([0,0,1,1])
 
@@ -265,9 +266,17 @@ ejes.set_title('Error bar', size = 20)
 
 plot_path = os.path.join(asteroid_dir, 'Error.png')
 plt.savefig(plot_path, bbox_inches='tight')
-
+'''
 #Generate artificial data (2 regressors + constant)
 #Fit regression model
 results = sm.OLS(y, x).fit()
 results_table = results.summary()
-(print(results_table))
+#(print(results_table))
+
+df_sorted.to_csv('arr_sort_a', index=False)
+df_sorted.to_csv('arr_sort_e', index=False)
+df_sorted.to_csv('arr_sort_i', index=False)
+df_sorted.to_csv('arr_sort_long_node', index=False)
+df_sorted.to_csv('arr_sort_arg_perh', index=False)
+
+
